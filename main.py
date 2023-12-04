@@ -5,7 +5,6 @@ import heapq
 def load_defects(csv_filepath):
     return pd.read_csv(csv_filepath)
 
-# Étape 2: Modélisation des données
 class Biscuit:
     def __init__(self, length, value, defect_thresholds):
         self.length = length
