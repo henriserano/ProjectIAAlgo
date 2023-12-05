@@ -54,11 +54,12 @@ def overlaps_with_defects(position, biscuit, defects):
     for defect in defects:
         if position <= defect.position < position + biscuit.length:
             defect_type = defect.defect_class
-            if defect_type in defect_thresholds and defect_thresholds[defect_type] > 0:
+            if defect_thresholds.get(defect_type, 0) > 0:
                 defect_thresholds[defect_type] -= 1
             else:
-                return True  # Retourne True si le seuil de défaut est dépassé
+                return True
     return False
+
 
 
 # Define the search function for finding the best arrangement of biscuits
@@ -232,7 +233,7 @@ def constraint_based_search(dough_roll, defects, biscuits):
 
     # Fonction pour générer un voisin qui respecte les contraintes
     def get_constrained_random_neighbor(solution):
-        max_attempts = 100
+        max_attempts = 400
         for _ in range(max_attempts):
             neighbor = solution[:]
             idx_to_replace = random.randrange(len(neighbor))
@@ -341,29 +342,27 @@ def hill_climbing_search(dough_roll, biscuits):
     current_solution = []
     total_length = 0
 
+    sorted_biscuits = sorted(biscuits, key=lambda b: b.value / b.length, reverse=True)
+    current_solution = []
+    total_length = 0
+
     while total_length < dough_roll.length:
-        eligible_biscuits = [
-        b for b in sorted_biscuits 
-        if total_length + b.length <= dough_roll.length and not overlaps_with_defects(total_length, b, dough_roll.defects)
-        ]
-
+        eligible_biscuits = [b for b in sorted_biscuits if total_length + b.length <= dough_roll.length and not overlaps_with_defects(total_length, b, dough_roll.defects)]
         if not eligible_biscuits:
-            total_length += 1  # Incrémentez légèrement la longueur totale pour contourner les défauts
+            total_length += 1  # Essayer de contourner les défauts
             continue
-
-        # Choisissez le biscuit qui maximise l'utilisation de l'espace restant
-        biscuit = min(eligible_biscuits, key=lambda b: dough_roll.length - (total_length + b.length))
+        biscuit = max(eligible_biscuits, key=lambda b: b.value / b.length)  # Sélectionner le biscuit avec le meilleur ratio valeur/longueur parmi les éligibles
         biscuit.position = round(total_length, 14)
         current_solution.append(biscuit)
         total_length += biscuit.length
 
     current_value = calculate_value(current_solution)
+    
 
 
 
     # Function to calculate the value of a solution
-    
-    
+
         # Function to create a neighbor solution
     # Fonction pour créer un voisin qui respecte les contraintes
     def get_random_neighbor(solution):
@@ -376,13 +375,16 @@ def hill_climbing_search(dough_roll, biscuits):
                 b for b in sorted_biscuits 
                 if b.length <= remaining_length and not overlaps_with_defects(sum(b.length for i, b in enumerate(neighbor) if i < idx_to_change), b, dough_roll.defects)
             ]
-
-            if eligible_biscuits:
-                # Choisissez un biscuit qui maximise l'utilisation de l'espace restant
-                best_biscuit = min(eligible_biscuits, key=lambda b: remaining_length - b.length)
+    
+            best_biscuit = None
+            best_biscuit_value = -1
+            for biscuit in eligible_biscuits:
+                if biscuit.value / biscuit.length > best_biscuit_value and not overlaps_with_defects(sum(b.length for i, b in enumerate(neighbor) if i < idx_to_change), biscuit, dough_roll.defects):
+                    best_biscuit = biscuit
+                    best_biscuit_value = biscuit.value / biscuit.length
+            if best_biscuit:
                 best_biscuit.position = sum(b.length for i, b in enumerate(neighbor) if i < idx_to_change)
                 neighbor[idx_to_change] = best_biscuit
-
                 if respects_constraints(neighbor, dough_roll):
                     return neighbor
 
