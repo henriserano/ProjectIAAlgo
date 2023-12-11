@@ -55,6 +55,7 @@ class Biscuit:
         self.position = 0
 
     def add_child(self, child_index):
+        """This function is used to add a child to a biscuit"""
         self.children_indices.append(child_index)
 
     def __lt__(self, other):
@@ -69,8 +70,10 @@ class Biscuit:
         return self.value < other.value
 
     def __eq__(self, other):
+        """This function is used to compare two biscuits"""
         return self.value == other.value
     def __str__(self):
+        """ This function is used to print a biscuit"""
         return f"La length de mon biscuit est : {self.length}, ma value est {self.value}, mes défauts sont {self.defect_thresholds}"
 
 # Define the Defect class
@@ -262,6 +265,11 @@ def constraint_based_search(dough_roll, defects, biscuits):
     sorted_biscuits = sorted(biscuits, key=lambda b: b.value / b.length, reverse=True)
     
     def generate_initial_solution():
+        """This function is used to generate an initial random solution
+
+        Returns:
+            _type_: the initial random solution
+        """
         solution = []
         total_length = 0
         max_length = dough_roll.length
@@ -296,10 +304,26 @@ def constraint_based_search(dough_roll, defects, biscuits):
     
     # Fonction pour calculer la valeur totale d'une solution
     def calculate_value(solution):
+        """This function is used to calculate the total value of a solution
+
+        Args:
+            solution (_type_): the solution
+
+        Returns:
+            _type_: the total value of the solution
+        """
         return sum(biscuit.value for biscuit in solution)
 
     # Fonction pour vérifier si la solution respecte les contraintes
     def respects_constraints(solution):
+        """This function is used to check if a solution respects the constraints
+
+        Args:
+            solution (_type_): the solution
+
+        Returns:
+            _type_: True if the solution respects the constraints, False otherwise
+        """
         total_length = sum(biscuit.length for biscuit in solution)
         if total_length > dough_roll.length:
             return False
@@ -313,6 +337,14 @@ def constraint_based_search(dough_roll, defects, biscuits):
 
     # Fonction pour générer un voisin qui respecte les contraintes
     def get_constrained_random_neighbor(solution):
+        """This function is used to generate a random neighbor that respects the constraints
+
+        Args:
+            solution (_type_): the solution
+
+        Returns:
+            _type_: the random neighbor that respects the constraints
+        """
         max_attempts = 400
         for _ in range(max_attempts):
             neighbor = solution[:]
@@ -365,9 +397,25 @@ def constraint_based_search(dough_roll, defects, biscuits):
     return current_solution
 
 def calculate_value(solution):
-        return sum(biscuit.value for biscuit in solution)
+    """This function is used to calculate the total value of a solution
+
+    Args:
+        solution (_type_): the solution
+    Returns:
+        _type_: the total value of the solution
+    """
+    return sum(biscuit.value for biscuit in solution)
 
 def respects_constraints(solution, dough_roll):
+    """This function is used to check if a solution respects the constraints
+
+    Args:
+        solution (_type_): the solution
+        dough_roll (_type_): the dough roll
+
+    Returns:
+        _type_: True if the solution respects the constraints, False otherwise
+    """
     total_length = sum(biscuit.length for biscuit in solution)
     if total_length > dough_roll.length:
         return False
@@ -380,7 +428,15 @@ def respects_constraints(solution, dough_roll):
 
 # Main entry point for running the optimization
 def hill_climbing_search(dough_roll, biscuits):
-    
+    """This function is used to run the hill climbing search
+
+    Args:
+        dough_roll (_type_): the dough roll
+        biscuits (_type_): the biscuits
+
+    Returns:
+        _type_: the solution and the total value of the solution
+    """
     print("Starting of the hill climbing search")
     # Créer une solution initiale qui respecte les contraintes de défauts
     sorted_biscuits = sorted(biscuits, key=lambda b: b.value / b.length, reverse=True)
@@ -416,6 +472,14 @@ def hill_climbing_search(dough_roll, biscuits):
 
     # Fonction pour créer un voisin qui respecte les contraintes
     def get_random_neighbor(solution):
+        """This function is used to create a random neighbor that respects the constraints
+
+        Args:
+            solution (_type_): the solution
+
+        Returns:
+            _type_: the random neighbor that respects the constraints
+        """
         for _ in range(100):
             neighbor = solution[:]
             idx_to_change = random.randrange(len(solution))
@@ -466,6 +530,12 @@ def hill_climbing_search(dough_roll, biscuits):
 
 # Correcting the print_solution function to handle a list of Biscuit objects
 def print_solution(solution,name):
+    """This function is used to print the solution
+
+    Args:
+        solution (_type_): the solution
+        name (_type_): the name of the algorithm
+    """
     print("L'algorithme de recherche est le ",name)
     if solution:
         print("A combination of biscuits has been found:")
