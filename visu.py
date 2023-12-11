@@ -30,14 +30,14 @@ def plot_defects_on_1d_space(length=500, initial_view=20, defects_file='defects.
             biscuit_ratio = (biscuit.value / biscuit.length) / 2
             unique_ratios.add(biscuit_ratio)  # Collect unique biscuit ratios
             biscuit_color = plt.cm.Oranges(biscuit_ratio)  # Use Oranges colormap for shades of orange
-            biscuit_rect = patches.Rectangle((x_position, -0.5), biscuit_width, 1, linewidth=1, edgecolor=biscuit_color, facecolor=biscuit_color, label=f'Biscuit {biscuit.value}')
-            ax.add_patch(biscuit_rect)
+            biscuit_ellipse = patches.Ellipse((x_position + biscuit_width / 2, 0), biscuit_width, 1, edgecolor=biscuit_color, facecolor=biscuit_color, label=f'Biscuit {biscuit.value}')
+            ax.add_patch(biscuit_ellipse)
 
     # Read defects from the CSV file
     defects_data = pd.read_csv(defects_file)
     
     # Plot defects with different colors based on their types
-    colors = {'a': '#009900', 'b': '#0099AA', 'c': '#0066AA'}
+    colors = {'a': 'red', 'b': 'green', 'c': 'blue'}
     for _, row in defects_data.iterrows():
         x_position = row['x']
         defect_type = row['class']
@@ -51,7 +51,7 @@ def plot_defects_on_1d_space(length=500, initial_view=20, defects_file='defects.
     # Add legend entries for unique biscuit ratios
     for biscuit_ratio in unique_ratios:
         biscuit_color = plt.cm.Oranges(biscuit_ratio)
-        legend_handles.append(patches.Rectangle((0, 0), 1, 1, color=biscuit_color, label=f'Biscuit Ratio: {biscuit_ratio:.2f}'))
+        legend_handles.append(patches.Ellipse((0, 0), 1, 1, color=biscuit_color, label=f'Biscuit Ratio: {biscuit_ratio:.2f}'))
 
     legend_handles.append(plt.Line2D([0], [0], color='gray', label='Roll of Dough'))
     ax.legend(handles=legend_handles)
