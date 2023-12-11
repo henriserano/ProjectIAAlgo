@@ -2,6 +2,7 @@ import pandas as pd
 import heapq
 import random
 import sys
+import heapq
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
@@ -14,6 +15,7 @@ def heuristic(biscuits, remaining_length):
 def load_defects(csv_filepath):
     return pd.read_csv(csv_filepath)
 
+
 # Define the Biscuit class
 class Biscuit:
     def __init__(self, length, value, defect_thresholds):
@@ -21,8 +23,11 @@ class Biscuit:
         self.value = value
         self.defect_thresholds = defect_thresholds
         self.children_indices = []
-        self.position = 0
+        self.position = None
 
+    def set_coordinates(self, coordinates):
+        self.position = coordinates
+    
     def add_child(self, child_index):
         self.children_indices.append(child_index)
 
@@ -130,14 +135,14 @@ def optimize_biscuit_placement(csv_filepath):
 
     solution_hill_climbing = hill_climbing_search(dough_roll, biscuits)
     constrained_solution = constraint_based_search( dough_roll, defects, biscuits)
-    
+    #solutiona = a_star_search(dough_roll, biscuits)
 
     
     if validate_solution(solution_hill_climbing[0], dough_roll, defects):
         print("La solution est valide.")
         update_biscuit_positions(solution_hill_climbing[0])
         print_solution(solution_hill_climbing[0], "Hill Climbing")
-        #print_dough_visualization(solution_hill_climbing[0], defects)
+        print_dough_visualization(solution_hill_climbing[0], defects)
     else:
         print("La solution n'est pas valide.")
         print_solution(solution_hill_climbing[0], "Hill Climbing")
@@ -147,10 +152,11 @@ def optimize_biscuit_placement(csv_filepath):
         update_biscuit_positions(constrained_solution)
         print_solution(constrained_solution, "Counstrainte solution")
         
-        #print_dough_visualization(constrained_solution, defects)
+        print_dough_visualization(constrained_solution, defects)
     else:
         print("La solution n'est pas valide.")
         print_solution(constrained_solution, "Counstrainte solution")
+        
     
     return solution_hill_climbing, defects
 
@@ -255,8 +261,8 @@ def constraint_based_search(dough_roll, defects, biscuits):
             
 
         return solution
- # Retourne la solution actuelle si aucun voisin valide n'est trouvé
-
+    
+    # Retourne la solution actuelle si aucun voisin valide n'est trouvé
     # Initialisation d'une solution aléatoire
     print("Debut de generation")
     current_solution = generate_initial_solution()
@@ -301,22 +307,20 @@ def print_dough_visualization(biscuits_sequence, defects):
 
     # Initialisation de la visualisation
     fig, ax = plt.subplots()
-    current_position = 0
     bar_height = 1
 
     # Affichage des biscuits
-    for biscuit in biscuits_sequence:
+    for i, biscuit in enumerate(biscuits_sequence):
         # Utilisez la valeur du biscuit pour obtenir la couleur
         biscuit_color = get_color(biscuit.value)
-        ax.add_patch(patches.Rectangle((current_position, 0), biscuit.length, bar_height, facecolor=biscuit_color))
-        current_position += biscuit.length
+        ax.add_patch(patches.Rectangle((biscuit.position, 0), biscuit.length, bar_height, facecolor=biscuit_color))
 
     # Affichage des défauts
     for defect in defects:
         ax.add_patch(patches.Rectangle((defect.position, -bar_height), 1, bar_height, facecolor='red'))
 
     # Ajustement des axes
-    ax.set_xlim(0, 500)  # Remplacez 500 par la longueur totale de la pâte si nécessaire
+    ax.set_xlim(0, max(biscuit.position + biscuit.length for biscuit in biscuits_sequence))
     ax.set_ylim(-bar_height, bar_height)
     ax.axis('off')
     plt.show()
@@ -333,6 +337,52 @@ def respects_constraints(solution, dough_roll):
             return False
 
     return True
+
+
+
+"""def calculate_heuristic(biscuits, dough_roll):
+    total_length = sum(biscuit.length for biscuit in biscuits)
+    return dough_roll.length - total_length
+
+def a_star_search(dough_roll, biscuits):
+    open_list = []
+    closed_list = set()
+
+    initial_state = ([], dough_roll)
+    heapq.heappush(open_list, (0, initial_state))
+
+    while open_list:
+        _, (current_solution, current_dough_roll) = heapq.heappop(open_list)
+
+        if current_dough_roll.length == 0:
+            return current_solution
+
+        for biscuit in biscuits:
+            if biscuit in current_solution:
+                continue
+
+            new_solution = current_solution + [biscuit]
+            new_dough_roll = Biscuit(current_dough_roll.length - biscuit.length, current_dough_roll.value, current_dough_roll.threshold)
+
+            if new_dough_roll.length < 0:
+                continue
+
+            if new_dough_roll.length == 0:
+                return new_solution
+
+            if new_solution in closed_list:
+                continue
+
+            new_solution_value = calculate_value(new_solution)
+            new_solution_heuristic = calculate_heuristic(new_solution, new_dough_roll)
+            priority = new_solution_value + new_solution_heuristic
+
+            heapq.heappush(open_list, (priority, (new_solution, new_dough_roll)))
+            closed_list.add(new_solution)
+
+    return None
+"""
+
 # Main entry point for running the optimization
 def hill_climbing_search(dough_roll, biscuits):
     # Créer une solution initiale qui respecte les contraintes de défauts
@@ -389,6 +439,8 @@ def hill_climbing_search(dough_roll, biscuits):
                     return neighbor
 
         return solution
+
+
 
 
 
