@@ -29,12 +29,25 @@ def plot_defects_on_1d_space(length=500, initial_view=20, defects_file='defects.
             biscuit_width = biscuit.length
             biscuit_ratio = (biscuit.value / biscuit.length) / 2
             unique_ratios.add(biscuit_ratio)  # Collect unique biscuit ratios
-            biscuit_color = plt.cm.Oranges(biscuit_ratio)  # Use Oranges colormap for shades of orange
-            biscuit_ellipse = patches.Ellipse((x_position + biscuit_width / 2, 0), biscuit_width, 1, edgecolor=biscuit_color, facecolor=biscuit_color, label=f'Biscuit {biscuit.value}')
-            ax.add_patch(biscuit_ellipse)
+
+            # Use Oranges colormap for shades of orange
+            biscuit_color = plt.cm.Oranges(biscuit_ratio)
             
+            # Calculate the border width based on the radius of the ellipse
+            border_width = min(biscuit_width, biscuit.length)
+            biscuit_ellipse = patches.Ellipse(
+                (x_position + biscuit_width / 2, 0),
+                biscuit_width,
+                1,
+                edgecolor='black',
+                linewidth=border_width,
+                facecolor=biscuit_color,
+                label=f'Biscuit {biscuit.value}'
+            )
+            ax.add_patch(biscuit_ellipse)
+
             # Add vertical dashed line between biscuits
-            ax.axvline(x_position + biscuit_width, color='#CCCCCC', linestyle=':')
+            ax.axvline(x_position + biscuit_width, color='gray', linestyle='--')
 
     # Read defects from the CSV file
     defects_data = pd.read_csv(defects_file)
