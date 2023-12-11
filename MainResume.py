@@ -416,9 +416,9 @@ if __name__ == "__main__":
 
 
     # Run hill climbing search to improve the solution
-    for i in solution[0]:
-        print(f"Position: {i.position} Length: {i.length} Defect Thresholds: {i.defect_thresholds}")
+    # for i in solution[0]:
+    #     print(f"Position: {i.position} Length: {i.length} Defect Thresholds: {i.defect_thresholds}")
     # print_solution(solution[0])
     # print_dough_visualization(solution[0], defects)
 
-    visu.plot_defects_on_1d_space(biscuits=solution[0])
+    # visu.plot_defects_on_1d_space(biscuits=solution[0])
