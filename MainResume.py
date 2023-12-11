@@ -138,16 +138,18 @@ def optimize_biscuit_placement(csv_filepath):
         print("La solution est valide.")
         update_biscuit_positions(solution_hill_climbing[0])
         print_solution(solution_hill_climbing[0], "Hill Climbing")
+        plot_defects_on_1d_space(biscuits=solution_hill_climbing[0])
         #print_dough_visualization(solution_hill_climbing[0], defects)
     else:
         print("La solution n'est pas valide.")
         print_solution(solution_hill_climbing[0], "Hill Climbing")
         
+        
     if validate_solution(constrained_solution, dough_roll, defects):
         print("La solution est valide.")
         update_biscuit_positions(constrained_solution)
         print_solution(constrained_solution, "Counstrainte solution")
-        
+        plot_defects_on_1d_space(biscuits=constrained_solution)
         #print_dough_visualization(constrained_solution, defects)
     else:
         print("La solution n'est pas valide.")
@@ -285,44 +287,6 @@ def constraint_based_search(dough_roll, defects, biscuits):
 
 
 
-
-def get_color(biscuit_type):
-    color_dict = {
-        'Type1': 'blue',
-        'Type2': 'green',
-        'Type3': 'yellow',
-    }
-    
-    return color_dict.get(biscuit_type, 'grey')
-
-def print_dough_visualization(biscuits_sequence, defects):
-    # Trouvez les valeurs min et max pour la normalisation des couleurs
-    global min_value, max_value
-    min_value = min(biscuit.value for biscuit in biscuits_sequence)
-    max_value = max(biscuit.value for biscuit in biscuits_sequence)
-
-    # Initialisation de la visualisation
-    fig, ax = plt.subplots()
-    current_position = 0
-    bar_height = 1
-
-    # Affichage des biscuits
-    for biscuit in biscuits_sequence:
-        # Utilisez la valeur du biscuit pour obtenir la couleur
-        biscuit_color = get_color(biscuit.value)
-        ax.add_patch(patches.Rectangle((current_position, 0), biscuit.length, bar_height, facecolor=biscuit_color))
-        current_position += biscuit.length
-
-    # Affichage des défauts
-    for defect in defects:
-        ax.add_patch(patches.Rectangle((defect.position, -bar_height), 1, bar_height, facecolor='red'))
-
-    # Ajustement des axes
-    ax.set_xlim(0, 500)  # Remplacez 500 par la longueur totale de la pâte si nécessaire
-    ax.set_ylim(-bar_height, bar_height)
-    ax.axis('off')
-    plt.show()
-
 def calculate_value(solution):
         return sum(biscuit.value for biscuit in solution)
 
@@ -452,8 +416,8 @@ if __name__ == "__main__":
 
 
     # Run hill climbing search to improve the solution
-    # for i in solution[0]:
-    #     print(f"Position: {i.position} Length: {i.length} Defect Thresholds: {i.defect_thresholds}")
+    for i in solution[0]:
+        print(f"Position: {i.position} Length: {i.length} Defect Thresholds: {i.defect_thresholds}")
     # print_solution(solution[0])
     # print_dough_visualization(solution[0], defects)
 
