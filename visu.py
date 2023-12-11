@@ -32,16 +32,19 @@ def plot_defects_on_1d_space(length=500, initial_view=20, defects_file='defects.
             biscuit_color = plt.cm.Oranges(biscuit_ratio)  # Use Oranges colormap for shades of orange
             biscuit_ellipse = patches.Ellipse((x_position + biscuit_width / 2, 0), biscuit_width, 1, edgecolor=biscuit_color, facecolor=biscuit_color, label=f'Biscuit {biscuit.value}')
             ax.add_patch(biscuit_ellipse)
+            
+            # Add vertical dashed line between biscuits
+            ax.axvline(x_position + biscuit_width, color='#CCCCCC', linestyle=':')
 
     # Read defects from the CSV file
     defects_data = pd.read_csv(defects_file)
     
     # Plot defects with different colors based on their types
-    colors = {'a': 'red', 'b': 'green', 'c': 'blue'}
+    colors = {'a': '#009900', 'b': '#00AAAA', 'c': '#0066AA'}
     for _, row in defects_data.iterrows():
         x_position = row['x']
         defect_type = row['class']
-        defect_y = {'a': 0.3, 'b': 0.2, 'c': 0.1}[defect_type]
+        defect_y = {'a': 0.15, 'b': 0.1, 'c': 0.05}[defect_type]
         ax.scatter(x_position, defect_y, color=colors[defect_type], marker='x')    
 
     # Add legend with relevant information
