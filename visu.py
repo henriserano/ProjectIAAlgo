@@ -33,7 +33,8 @@ def plot_defects_on_1d_space(length=500, initial_view=20, defects_file='defects.
             biscuit_ellipse = patches.Ellipse((x_position + biscuit_width / 2, 0), biscuit_width, 1, edgecolor=biscuit_color, facecolor=biscuit_color, label=f'Biscuit {biscuit.value}')
             ax.add_patch(biscuit_ellipse)
             
-            # Add vertical dashed line between biscuits
+            # Add vertical dotted line between biscuits
+            ax.axvline(x_position, color='#CCCCCC', linestyle=':')
             ax.axvline(x_position + biscuit_width, color='#CCCCCC', linestyle=':')
         unique_ratios = sorted(unique_ratios)
 
