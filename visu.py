@@ -35,13 +35,14 @@ def plot_defects_on_1d_space(length=500, initial_view=20, defects_file='defects.
 
     # Read defects from the CSV file
     defects_data = pd.read_csv(defects_file)
-
+    
     # Plot defects with different colors based on their types
-    colors = {'a': 'red', 'b': 'green', 'c': 'blue'}
+    colors = {'a': '#009900', 'b': '#0099AA', 'c': '#0066AA'}
     for _, row in defects_data.iterrows():
         x_position = row['x']
         defect_type = row['class']
-        ax.scatter(x_position, 0, color=colors[defect_type], marker='x')
+        defect_y = {'a': 0.3, 'b': 0.2, 'c': 0.1}[defect_type]
+        ax.scatter(x_position, defect_y, color=colors[defect_type], marker='x')    
 
     # Add legend with relevant information
     legend_labels = {'a': 'Defect Type A', 'b': 'Defect Type B', 'c': 'Defect Type C'}
