@@ -8,7 +8,8 @@ import time
 global precision
 #If we want to have a perfect solution we will need a precision = 1e-14 but that will take approximatily 24 hours to run
 precision = 1e-4
-
+global myiteration
+myiteration = 50
 # Define the heuristic function for use in search algorithms
 def heuristic(biscuits, remaining_length):
     """This function is used to calculate the heuristic value of a state in the search space.
@@ -344,7 +345,7 @@ def constraint_based_search(dough_roll, defects, biscuits):
     print("Debut de calculate value")
     current_value = calculate_value(current_solution)
     print("Debut boucle")
-    max_steps_without_improvement = 50  # Augmentez si nécessaire
+    max_steps_without_improvement = myiteration  # Augmentez si nécessaire
 
     # Boucle de recherche avec barre de progression
     for step in range(max_steps_without_improvement):
@@ -439,7 +440,7 @@ def hill_climbing_search(dough_roll, biscuits):
         return solution
 
     # Perform hill climbing
-    max_steps_without_improvement = 50  # Augmentez si nécessaire
+    max_steps_without_improvement = myiteration  # Augmentez si nécessaire
     
     steps_without_improvement = 0
     for step in range(max_steps_without_improvement):
