@@ -138,7 +138,7 @@ def optimize_biscuit_placement(csv_filepath):
         print("La solution est valide.")
         update_biscuit_positions(solution_hill_climbing[0])
         print_solution(solution_hill_climbing[0], "Hill Climbing")
-        plot_defects_on_1d_space(biscuits=solution_hill_climbing[0])
+        visu.plot_defects_on_1d_space(biscuits=solution_hill_climbing[0])
         #print_dough_visualization(solution_hill_climbing[0], defects)
     else:
         print("La solution n'est pas valide.")
@@ -149,7 +149,7 @@ def optimize_biscuit_placement(csv_filepath):
         print("La solution est valide.")
         update_biscuit_positions(constrained_solution)
         print_solution(constrained_solution, "Counstrainte solution")
-        plot_defects_on_1d_space(biscuits=constrained_solution)
+        visu.plot_defects_on_1d_space(biscuits=constrained_solution)
         #print_dough_visualization(constrained_solution, defects)
     else:
         print("La solution n'est pas valide.")
