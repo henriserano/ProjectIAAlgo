@@ -12,11 +12,21 @@ lenDough = 500
 a = 0
 b = 0
 c = 0
+
 class Biscuit():
-    def __init__(self,a,b,c,l,v) -> None:
+    def __init__(self,a,b,c,lenth,value) -> None:
         self.a = a
         self.b = b
+        self.c = c
+        self.lenth = lenth
+        self.value = value
         
+    
+Biscuit1 = Biscuit(4,2,3,4,6)
+Biscuit2 = Biscuit(5,4,4,8,12)
+Biscuit3 = Biscuit(1,2,1,2,1)
+Biscuit4 = Biscuit(2,3,2,5,8)
+
 biscuits = [
     {'a': 4, 'b': 2, 'c': 3, 'l': 4, 'v': 6},
     {'a': 5, 'b': 4, 'c': 4, 'l': 8, 'v': 12},
