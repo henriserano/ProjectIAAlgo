@@ -53,9 +53,7 @@ the project : Henri Serano – Eloi Seidlitz
 
 # [Introduction]()
 
-## [Purpose
-
-and Context of the Code]()
+## [Purpose and Context of the Code]()
 
 This code
 is an intricate example of applying algorithmic solutions to a real-world
@@ -66,18 +64,14 @@ quality and yield of the final product. Given the competitive nature of the
 industry, optimizing the use of raw materials and minimizing waste are crucial
 for efficiency and profitability.
 
-## [Main
-
-Objective]()
+## [Main Objective]()
 
 The
 principal objective of the code is to optimize the placement of biscuits on a
 dough roll, taking into account existing defects. This optimization is crucial the
 overall efficiency of the biscuit production process.
 
-## [Overview
-
-of the Code Structure]()
+## [Overview of the Code Structure]()
 
 The code is
 organized into several distinct components, each serving a specific function:
@@ -98,12 +92,9 @@ organized into several distinct components, each serving a specific function:
    functions and a progress tracking mechanism. These are essential for monitoring
    the performance of the algorithms and visualizing the solutions.
 
-# [Detailed
+# [Detailed Analysis of Key Components]()
 
-Analysis of Key Components]()
-
-[Classes
-and Their Roles]()
+[Classes and Their Roles]()
 
 The code
 employs object-oriented programming principles to model the real-world scenario
@@ -182,13 +173,9 @@ production, and the `DoughRoll` class provides the context in which the
 production takes place. Together, they form the backbone of the code’s
 simulation of the biscuit production optimization process.
 
-# [Hill
+# [Hill Climbing Search]()
 
-Climbing Search]()
-
-## [Description
-
-of the Hill Climbing Search Algorithm]()
+## [Description of the Hill Climbing Search Algorithm]()
 
 Hill
 climbing is a mathematical optimization technique which belongs to the family
@@ -230,9 +217,7 @@ Iteration: This process repeats, continually
 making small adjustments to the solution and climbing towards a local maximum
 of the objective function (total biscuit value).
 
-## [Iteration
-
-and Improvement of Solutions]()
+## [Iteration and Improvement of Solutions]()
 
 The hill
 climbing algorithm iteratively improves upon the current solution as follows:
@@ -273,12 +258,9 @@ scenario depends on how well it can navigate the search space of biscuit
 arrangements to maximize the total value while avoiding defects on the dough
 roll.
 
-# [Constraint-Based
+# [Constraint-Based Search]()
 
-Search]()
-
-[Approach
-of Constraint-Based Search]()
+[Approach of Constraint-Based Search]()
 
 Constraint-Based
 Search is a method used in optimization problems where solutions must adhere to
@@ -321,9 +303,7 @@ algorithm iteratively improves the solution, always ensuring that the
 constraints are satisfied. The search continues until no better solution can be
 found that adheres to the constraints.
 
-## [Differences
-
-from Hill Climbing Search]()
+## [Differences from Hill Climbing Search]()
 
 Focus on
 Constraints: The
@@ -364,12 +344,9 @@ placement problem, it ensures that all solutions adhere to the dough roll's
 limitations and defect positions, potentially leading to a more consistent and
 feasible optimization outcome compared to hill climbing.
 
-# [Solution
+# [Solution Validation]()
 
-Validation]()
-
-[Outline
-of the Solution Validation Process]()
+[Outline of the Solution Validation Process]()
 
 Solution
 validation is a crucial step in optimization problems, ensuring that the
@@ -409,8 +386,7 @@ Constraint Adherence:
   identify and report the specific errors or constraints that were violated. This
   can be crucial for debugging and refining the algorithm.
 
-[Visualization
-and Progress Tracking]()
+[Visualization and Progress Tracking]()
 
 Visualization
 plays a vital role in understanding and analyzing the solution, especially in
@@ -451,8 +427,7 @@ heuristic function used for search algorithms and its significance.
 
 # [Conclusion]()
 
-[Summary
-of Key Findings and Results]()
+[Summary of Key Findings and Results]()
 
 The code
 for optimizing biscuit placement on a dough roll with defects presents a
@@ -483,8 +458,7 @@ and Progress Tracking**: The incorporation of visualization and progress
 tracking tools in the code enhanced the understanding and analysis of the
 algorithms’ performance and the solutions they generated.
 
-[Reflection
-on Learning Outcomes and Applicability]()
+[Reflection on Learning Outcomes and Applicability]()
 
 Algorithmic
 Understanding: The process of implementing and analyzing these algorithms
