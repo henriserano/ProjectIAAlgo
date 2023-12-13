@@ -7,7 +7,7 @@ import visu
 import time
 global precision
 #If we want to have a perfect solution we will need a precision = 1e-14 but that will take approximatily 24 hours to run
-precision = 1e-4
+precision = 1
 global myiteration
 myiteration = 50
 # Define the heuristic function for use in search algorithms
