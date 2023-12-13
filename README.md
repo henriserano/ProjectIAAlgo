@@ -53,7 +53,7 @@ the project : Henri Serano – Eloi Seidlitz
 
 # [Introduction](#c153211973)
 
-## [Purpose and Context of the Code]()
+## [Purpose and Context of the Code](#_Toc153211974)
 
 This code
 is an intricate example of applying algorithmic solutions to a real-world
@@ -64,14 +64,14 @@ quality and yield of the final product. Given the competitive nature of the
 industry, optimizing the use of raw materials and minimizing waste are crucial
 for efficiency and profitability.
 
-## [Main Objective]()
+## [Main Objective](class:#_Toc153211975)
 
 The
 principal objective of the code is to optimize the placement of biscuits on a
 dough roll, taking into account existing defects. This optimization is crucial the
 overall efficiency of the biscuit production process.
 
-## [Overview of the Code Structure]()
+## [Overview of the Code Structure](class:#c153211976)
 
 The code is
 organized into several distinct components, each serving a specific function:
@@ -92,9 +92,9 @@ organized into several distinct components, each serving a specific function:
    functions and a progress tracking mechanism. These are essential for monitoring
    the performance of the algorithms and visualizing the solutions.
 
-# [Detailed Analysis of Key Components]()
+# [Detailed Analysis of Key Components](class = #_Toc153211977)
 
-[Classes and Their Roles]()
+[Classes and Their Roles](class=c153211978)
 
 The code
 employs object-oriented programming principles to model the real-world scenario
@@ -185,15 +185,11 @@ improving it a bit more, much like climbing a hill step by step.
 In the context of optimizing biscuit placement based on dough roll defects, the hill
 climbing search algorithm operates as follows:
 
-**Initial Solution**:
-
-The algorithm begins with an initial solution. This could be a random
+**Initial Solution**: The algorithm begins with an initial solution. This could be a random
 arrangement of biscuits on the dough roll, respecting the constraints such as
 the dough roll length and defect positions.
 
-**Evaluation**:
-
-It evaluates the current solution based on a predefined metric, like the
+**Evaluation**: It evaluates the current solution based on a predefined metric, like the
 total value of biscuits placed on the dough roll without overlapping defects.
 
 **Neighbor Solutions**: It
@@ -269,8 +265,7 @@ search algorithm operates with the following approach:
 
 **Focus on Constraints**: The most significant difference is the focus on respecting constraints. While hill climbing may occasionally violate constraints for short-term gains, constraint-based search never allows solutions that break the defined rules.
 
-**Initial Solution Quality**:
-In constraint-based search, the quality of the initial solution is paramount
+**Initial Solution Quality**: In constraint-based search, the quality of the initial solution is paramount
 since it must satisfy all constraints from the outset. In contrast, hill
 climbing can start with a less restrictive initial solution.
 
@@ -285,8 +280,7 @@ sophisticated methods to generate neighbors.
 In contrast, constraint-based search treats adherence to constraints as
 equally, if not more, important than the objective function.
 
-**Solution Space Exploration**:
-Constraint-based search may explore the solution space more comprehensively, as
+**Solution Space Exploration**: Constraint-based search may explore the solution space more comprehensively, as
 it needs to find feasible solutions under strict constraints. This can
 potentially lead to finding globally optimal solutions, but it also might
 require more computational resources and time.
@@ -338,20 +332,13 @@ Visualization
 plays a vital role in understanding and analyzing the solution, especially in
 complex optimization problems:
 
-**Graphical Representation**:
-Visualizing the placement of biscuits on the dough roll can provide an
+**Graphical Representation**: Visualizing the placement of biscuits on the dough roll can provide an
 intuitive understanding of how the solution fits within the constraints and
 maximizes value.
 
-**Defect Mapping**: A
-visual map showing the defects on the dough roll and how biscuits are aligned
-relative to these defects can be very insightful. It helps in quickly
-identifying if any biscuits overlap with defects.
+**Defect Mapping**: A visual map showing the defects on the dough roll and how biscuits are aligned relative to these defects can be very insightful. It helps in quickly identifying if any biscuits overlap with defects.
 
-**Solution Comparison**: When
-different algorithms (like hill climbing and constraint-based search) are used,
-visualization can compare their solutions side-by-side, aiding in assessing
-which algorithm performs better under given scenarios.
+**Solution Comparison**: When different algorithms (like hill climbing and constraint-based search) are used, visualization can compare their solutions side-by-side, aiding in assessing which algorithm performs better under given scenarios.
 
 In summary,
 solution validation ensures that the proposed solution is viable, efficient,
