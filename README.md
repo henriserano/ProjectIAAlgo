@@ -8,9 +8,9 @@ Repo du projet d'IA Algo
 Member of
 the project : Henri Serano – Eloi Seidlitz
 
- Summary
+ ### Summary
 
- [Introduction. 2](#_Toc153211973)
+ [Introduction](#introduction)
 
  [Purpose and Context of the Code. 2](#_Toc153211974)
 
@@ -92,7 +92,7 @@ organized into several distinct components, each serving a specific function:
    functions and a progress tracking mechanism. These are essential for monitoring
    the performance of the algorithms and visualizing the solutions.
 
-# [Detailed Analysis of Key Components](class = #_Toc153211977)
+# [Detailed Analysis of Key Components]()
 
 [Classes and Their Roles](class=c153211978)
 
