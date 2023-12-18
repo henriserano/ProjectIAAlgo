@@ -12,7 +12,7 @@ the project : Henri Serano – Eloi Seidlitz
 
  - [Introduction](#introduction)
 
-   - [Purpose and Context of the Code](#Purposeand-Context-of-the-Code)
+   - [Purpose and Context of the Code](#purposeand-context-of-the-code)
 
    - [Main Objective](#_Toc153211975)
 
@@ -40,7 +40,7 @@ the project : Henri Serano – Eloi Seidlitz
 
  - [Visualization and Progress Tracking](#_Toc153211987)
 
- - [Conclusion](#_Toc153211988)
+ - [Conclusion](#conclusion)
 
    - [Summary of Key Findings and Results](#_Toc153211989)
 
