@@ -12,7 +12,7 @@ the project : Henri Serano – Eloi Seidlitz
 
  - [Introduction](#introduction)
 
-   - [Purpose and Context of the Code](#purposeand-context-of-the-code)
+   - [Purpose and Context of the Code](#purpose-and-context-of-the-code)
 
    - [Main Objective](#_Toc153211975)
 
