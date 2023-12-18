@@ -10,48 +10,43 @@ the project : Henri Serano – Eloi Seidlitz
 
  ### Summary
 
- [Introduction](#introduction)
+ - [Introduction](#introduction)
 
- [Purpose and Context of the Code. 2](#_Toc153211974)
+   - [Purpose and Context of the Code. 2](#_Toc153211974)
 
- [Main Objective. 2](#_Toc153211975)
+   - [Main Objective. 2](#_Toc153211975)
 
- [Overview of the Code Structure. 2](#_Toc153211976)
+   - [Overview of the Code Structure. 2](#_Toc153211976)
 
- [Detailed Analysis of Key Components. 2](#_Toc153211977)
+   - [Detailed Analysis of Key Components. 2](#_Toc153211977)
 
- [Classes and Their Roles. 2](#_Toc153211978)
+   - [Classes and Their Roles. 2](#_Toc153211978)
 
- [Hill Climbing Search. 4](#_Toc153211979)
+ - [Hill Climbing Search. 4](#_Toc153211979)
 
- [Description of the Hill Climbing
- Search Algorithm.. 4](#_Toc153211980)
+   - [Description of the Hill Climbing Search Algorithm.. 4](#_Toc153211980)
 
- [Iteration and Improvement of
- Solutions. 4](#_Toc153211981)
+   - [Iteration and Improvement of Solutions. 4](#_Toc153211981)
 
- [Constraint-Based Search. 5](#_Toc153211982)
+ - [Constraint-Based Search. 5](#_Toc153211982)
 
- [Approach of Constraint-Based Search. 5](#_Toc153211983)
+   - [Approach of Constraint-Based Search. 5](#_Toc153211983)
 
- [Differences from Hill Climbing
- Search. 6](#_Toc153211984)
+ - [Differences from Hill Climbing Search. 6](#_Toc153211984)
 
- [Solution Validation. 6](#_Toc153211985)
+   - [Solution Validation. 6](#_Toc153211985)
 
- [Outline of the Solution Validation
- Process. 6](#_Toc153211986)
+   - [Outline of the Solution Validation Process. 6](#_Toc153211986)
 
- [Visualization and Progress Tracking. 7](#_Toc153211987)
+ - [Visualization and Progress Tracking. 7](#_Toc153211987)
 
- [Conclusion. 8](#_Toc153211988)
+ - [Conclusion. 8](#_Toc153211988)
 
- [Summary of Key Findings and Results. 8](#_Toc153211989)
+   - [Summary of Key Findings and Results. 8](#_Toc153211989)
 
- [Reflection on Learning Outcomes and
- Applicability. 8](#_Toc153211990)
+   - [Reflection on Learning Outcomes and Applicability. 8](#_Toc153211990)
 
-# [Introduction](#c153211973)
+# Introduction
 
 ## [Purpose and Context of the Code](#_Toc153211974)
 
