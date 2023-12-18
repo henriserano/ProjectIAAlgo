@@ -10,41 +10,30 @@ the project : Henri Serano – Eloi Seidlitz
 
  # Summary
 
- - [Introduction](#introduction)
+- [Introduction](#introduction)
+  - [Purpose and Context of the Code](#purpose-and-context-of-the-code)
+  - [Main Objective](#main-objective)
+  - [Overview of the Code Structure](#overview-of-the-code-structure)
+  - [Detailed Analysis of Key Components](#detailed-analysis-of-key-components)
+  - [Classes and Their Roles](#classes-and-their-roles)
 
-   - [Purpose and Context of the Code](#purpose-and-context-of-the-code)
+- [Hill Climbing Search](#hill-climbing-search)
+  - [Description of the Hill Climbing Search Algorithm](#description-of-the-hill-climbing-search-algorithm)
+  - [Iteration and Improvement of Solutions](#iteration-and-improvement-of-solutions)
 
-   - [Main Objective](#_Toc153211975)
+- [Constraint-Based Search](#constraint-based-search)
+  - [Approach of Constraint-Based Search](#approach-of-constraint-based-search)
 
-   - [Overview of the Code Structure](#_Toc153211976)
+- [Differences from Hill Climbing Search](#differences-from-hill-climbing-search)
+  - [Solution Validation](#solution-validation)
+  - [Outline of the Solution Validation Process](#outline-of-the-solution-validation-process)
 
-   - [Detailed Analysis of Key Components](#_Toc153211977)
+- [Visualization and Progress Tracking](#visualization-and-progress-tracking)
 
-   - [Classes and Their Roles](#_Toc153211978)
+- [Conclusion](#conclusion)
+  - [Summary of Key Findings and Results](#summary-of-key-findings-and-results)
+  - [Reflection on Learning Outcomes and Applicability](#reflection-on-learning-outcomes-and-applicability)
 
- - [Hill Climbing Search](#_Toc153211979)
-
-   - [Description of the Hill Climbing Search Algorithm](#_Toc153211980)
-
-   - [Iteration and Improvement of Solutions](#_Toc153211981)
-
- - [Constraint-Based Search](#_Toc153211982)
-
-   - [Approach of Constraint-Based Search](#_Toc153211983)
-
- - [Differences from Hill Climbing Search](#_Toc153211984)
-
-   - [Solution Validation](#_Toc153211985)
-
-   - [Outline of the Solution Validation Process](#_Toc153211986)
-
- - [Visualization and Progress Tracking](#_Toc153211987)
-
- - [Conclusion](#conclusion)
-
-   - [Summary of Key Findings and Results](#_Toc153211989)
-
-   - [Reflection on Learning Outcomes and Applicability](#_Toc153211990)
 
 # Introduction
 
