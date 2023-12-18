@@ -10,7 +10,7 @@ the project : Henri Serano – Eloi Seidlitz
 
  Summary
 
- [Introduction. 2](#_Toc153211973)
+ [Introduction. 2](#introduction)
 
  [Purpose and Context of the Code. 2](#_Toc153211974)
 
@@ -51,7 +51,7 @@ the project : Henri Serano – Eloi Seidlitz
  [Reflection on Learning Outcomes and
  Applicability. 8](#_Toc153211990)
 
-# [Introduction](#c153211973)
+# Introduction
 
 ## [Purpose and Context of the Code](#_Toc153211974)
 
