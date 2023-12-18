@@ -8,47 +8,47 @@ Repo du projet d'IA Algo
 Member of
 the project : Henri Serano – Eloi Seidlitz
 
- ### Summary
+ # Summary
 
  - [Introduction](#introduction)
 
-   - [Purpose and Context of the Code. 2](#_Toc153211974)
+   - [Purpose and Context of the Code](#Purposeand-Context-of-the-Code)
 
-   - [Main Objective. 2](#_Toc153211975)
+   - [Main Objective](#_Toc153211975)
 
-   - [Overview of the Code Structure. 2](#_Toc153211976)
+   - [Overview of the Code Structure](#_Toc153211976)
 
-   - [Detailed Analysis of Key Components. 2](#_Toc153211977)
+   - [Detailed Analysis of Key Components](#_Toc153211977)
 
-   - [Classes and Their Roles. 2](#_Toc153211978)
+   - [Classes and Their Roles](#_Toc153211978)
 
- - [Hill Climbing Search. 4](#_Toc153211979)
+ - [Hill Climbing Search](#_Toc153211979)
 
-   - [Description of the Hill Climbing Search Algorithm.. 4](#_Toc153211980)
+   - [Description of the Hill Climbing Search Algorithm](#_Toc153211980)
 
-   - [Iteration and Improvement of Solutions. 4](#_Toc153211981)
+   - [Iteration and Improvement of Solutions](#_Toc153211981)
 
- - [Constraint-Based Search. 5](#_Toc153211982)
+ - [Constraint-Based Search](#_Toc153211982)
 
-   - [Approach of Constraint-Based Search. 5](#_Toc153211983)
+   - [Approach of Constraint-Based Search](#_Toc153211983)
 
- - [Differences from Hill Climbing Search. 6](#_Toc153211984)
+ - [Differences from Hill Climbing Search](#_Toc153211984)
 
-   - [Solution Validation. 6](#_Toc153211985)
+   - [Solution Validation](#_Toc153211985)
 
-   - [Outline of the Solution Validation Process. 6](#_Toc153211986)
+   - [Outline of the Solution Validation Process](#_Toc153211986)
 
- - [Visualization and Progress Tracking. 7](#_Toc153211987)
+ - [Visualization and Progress Tracking](#_Toc153211987)
 
- - [Conclusion. 8](#_Toc153211988)
+ - [Conclusion](#_Toc153211988)
 
-   - [Summary of Key Findings and Results. 8](#_Toc153211989)
+   - [Summary of Key Findings and Results](#_Toc153211989)
 
-   - [Reflection on Learning Outcomes and Applicability. 8](#_Toc153211990)
+   - [Reflection on Learning Outcomes and Applicability](#_Toc153211990)
 
 # Introduction
 
-## [Purpose and Context of the Code](#_Toc153211974)
+## Purpose and Context of the Code
 
 This code
 is an intricate example of applying algorithmic solutions to a real-world
@@ -59,14 +59,14 @@ quality and yield of the final product. Given the competitive nature of the
 industry, optimizing the use of raw materials and minimizing waste are crucial
 for efficiency and profitability.
 
-## [Main Objective](class:#_Toc153211975)
+## Main Objective
 
 The
 principal objective of the code is to optimize the placement of biscuits on a
 dough roll, taking into account existing defects. This optimization is crucial the
 overall efficiency of the biscuit production process.
 
-## [Overview of the Code Structure](class:#c153211976)
+## Overview of the Code Structure
 
 The code is
 organized into several distinct components, each serving a specific function:
@@ -87,9 +87,9 @@ organized into several distinct components, each serving a specific function:
    functions and a progress tracking mechanism. These are essential for monitoring
    the performance of the algorithms and visualizing the solutions.
 
-# [Detailed Analysis of Key Components]()
+# Detailed Analysis of Key Components
 
-[Classes and Their Roles](class=c153211978)
+## Classes and Their Roles
 
 The code
 employs object-oriented programming principles to model the real-world scenario
@@ -166,9 +166,9 @@ production, and the `DoughRoll` class provides the context in which the
 production takes place. Together, they form the backbone of the code’s
 simulation of the biscuit production optimization process.
 
-# [Hill Climbing Search]()
+# Hill Climbing Search
 
-## [Description of the Hill Climbing Search Algorithm]()
+## Description of the Hill Climbing Search Algorithm
 
 **Hill climbing** is a mathematical optimization technique which belongs to the family
 of local search algorithms. It is often used for solving computational problems
@@ -201,7 +201,7 @@ current solution, it becomes the new current solution.
 making small adjustments to the solution and climbing towards a local maximum
 of the objective function (total biscuit value).
 
-## [Iteration and Improvement of Solutions]()
+## Iteration and Improvement of Solutions
 
 The hill
 climbing algorithm iteratively improves upon the current solution as follows:
@@ -235,9 +235,9 @@ scenario depends on how well it can navigate the search space of biscuit
 arrangements to maximize the total value while avoiding defects on the dough
 roll.
 
-# [Constraint-Based Search]()
+# Constraint-Based Search
 
-[Approach of Constraint-Based Search]()
+## Approach of Constraint-Based Search
 
 **Constraint-Based Search** is a method used in optimization problems where solutions must adhere to a set of constraints. Unlike algorithms that primarily focus on optimizing a single objective (such as maximizing value or minimizing cost),
 constraint-based search is particularly adept at handling problems where
@@ -256,7 +256,7 @@ search algorithm operates with the following approach:
 
 **Iterative Improvement**: The algorithm iteratively improves the solution, always ensuring that the constraints are satisfied. The search continues until no better solution can be found that adheres to the constraints.
 
-## [Differences from Hill Climbing Search]()
+## Differences from Hill Climbing Search
 
 **Focus on Constraints**: The most significant difference is the focus on respecting constraints. While hill climbing may occasionally violate constraints for short-term gains, constraint-based search never allows solutions that break the defined rules.
 
@@ -286,9 +286,9 @@ placement problem, it ensures that all solutions adhere to the dough roll's
 limitations and defect positions, potentially leading to a more consistent and
 feasible optimization outcome compared to hill climbing.
 
-# [Solution Validation]()
+# Solution Validation
 
-[Outline of the Solution Validation Process]()
+## Outline of the Solution Validation Process
 
 Solution
 validation is a crucial step in optimization problems, ensuring that the
@@ -321,7 +321,7 @@ steps:
   identify and report the specific errors or constraints that were violated. This
   can be crucial for debugging and refining the algorithm.
 
-[Visualization and Progress Tracking]()
+## Visualization and Progress Tracking
 
 Visualization
 plays a vital role in understanding and analyzing the solution, especially in
@@ -350,9 +350,9 @@ Function
 Explain the
 heuristic function used for search algorithms and its significance.
 
-# [Conclusion]()
+# Conclusion
 
-[Summary of Key Findings and Results]()
+## Summary of Key Findings and Results
 
 The code
 for optimizing biscuit placement on a dough roll with defects presents a
@@ -379,7 +379,7 @@ ensures adherence to crucial constraints.
 tracking tools in the code enhanced the understanding and analysis of the
 algorithms’ performance and the solutions they generated.
 
-[Reflection on Learning Outcomes and Applicability]()
+## Reflection on Learning Outcomes and Applicability
 
 **Algorithmic Understanding**: The process of implementing and analyzing these algorithms
 provided deep insights into optimization techniques and their application in
